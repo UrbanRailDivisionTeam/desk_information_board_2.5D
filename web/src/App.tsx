@@ -4,11 +4,11 @@ import HomePage from "./pages/HomePage"
 import ThreePage from "./pages/ThreePage"
 
 export default function App() {
-  return (
-    <Routes>
-      <Route path="/" element={<HomePage />} />
-      <Route path="/three" element={<ThreePage />} />
-      <Route path="*" element={<Navigate to="/" replace />} />
-    </Routes>
-  )
+    return (
+        <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/three" element={<ThreePage />} />
+            <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
+    )
 }
