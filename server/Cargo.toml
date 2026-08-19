@@ -1,0 +1,22 @@
+[package]
+name = "server"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+anyhow = "1.0.104"
+clap = { version = "4.6.5", features = ["derive"] }
+clickhouse = { version = "0.15.1", features = ["time", "inserter"] }
+salvo = { version = "0.95", features = ["serve-static", "http1", "socket2", "logging", "affix-state", "anyhow", "jwt-auth"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+jsonwebtoken = "9"
+time = "0.3"
+tokio = { version = "1", features = ["macros", "rt-multi-thread"] }
+tracing = "0.1"
+tracing-subscriber = "0.3"
+
+
+[profile.release]
+lto = "fat"
+codegen-units = 1
